@@ -1,0 +1,26 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>売上シミュレーション</title>
+</head>
+<body>
+	<h1>売上シミュレーション</h1>
+	<h2>誰を働かせますか</h2>
+	<p th:text="${budget}"></p>
+	<form action="/main" method="post">
+	<input type="submit" name="input_type_staff" value="スタッフ(費用：20)" ></input>
+	<input type="submit" name="input_type_chief" value="チーフ(費用：40)" ></input>
+	<input type="submit" name="input_type_ceo"   value="ＣＥＯ(費用：80)" ></input>
+	</form>
+
+	<p th:text="${message}"></p>
+	<dl>
+  <th:block th:each="user: ${users}">
+    <dt>
+      <span class="name" th:text="${user.name}"></span>
+    </dt>
+  </th:block>
+</dl>
+</body>
+</html>

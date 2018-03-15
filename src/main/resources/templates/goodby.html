@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>売上シミュレーション</title>
+</head>
+<body>
+	<h1>売上シミュレーション</h1>
+	<h2>結果</h2>
+	<p th:text="${revenue}"></p>
+	<p th:text="${expense}"></p>
+	<p th:text="${profit}"></p>
+
+	<dl>
+	<th:block th:each="user: ${users}">
+	<dt>
+	<span class="name" th:text="${user.name}"></span>
+	</dt>
+	</th:block>
+</dl>
+	<form action="/goodbye" method="post">
+	<input type="submit" name="input_retry"   value="もう一度" ></input>
+	</form>
+</body>
+</html>
